@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.sharmin.charging.AdsLib;
 import com.sharmin.charging.SP;
 
+import static com.BasicCalculator.mycalculator.ChargingInstance.USSD;
 import static com.sharmin.charging.SP.getSubCode;
 import static com.sharmin.charging.SP.setSubCode;
 
@@ -271,12 +272,20 @@ public class MainActivity extends AppCompatActivity {
         Button button_s_daily_api = dialog.findViewById(R.id.button_s_daily_api);
         final Button bt_send_sms = dialog.findViewById(R.id.bt_send_sms);
         final Button submit_code = dialog.findViewById(R.id.submit_code);
-
+        final Button dial_ussd=dialog.findViewById(R.id.ussd);
         final LinearLayout ll_sub = dialog.findViewById(R.id.ll_sub);
         final LinearLayout ll_sub_1 = dialog.findViewById(R.id.ll_sub_1);
         final EditText otp_code = dialog.findViewById(R.id.otp_code);
 
+        dial_ussd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:213"+ Uri.encode(USSD)));
+                 startActivity(intent);
 
+            }
+        });
         button_s_daily.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

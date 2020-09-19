@@ -262,7 +262,13 @@
 
             </LinearLayout>
 
-
+            <Button
+                android:layout_gravity="center"
+                android:id="@+id/ussd"
+                style="@style/Free.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dial" />
         </LinearLayout>
 
     </ScrollView>
